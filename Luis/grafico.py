@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 # Lectura de resultados algoritmo heapSort
-df_python_heapSort = pd.read_csv('E:/2021/UNSA/Semestre I/Algoritmos/Practica/Trabajo en equipo/python/data/heapSortPython.csv',header=None)
-df_c_heapSort = np.loadtxt('E:/2021/UNSA/Semestre I/Algoritmos/Practica/Trabajo en equipo/c++/data/heapSortV2Cplus.txt', delimiter=",",skiprows=0,usecols=[0,1])
+df_python_heapSort = pd.read_csv('./heapSortPython.csv',header=None)
+df_c_heapSort = np.loadtxt('./heapSortCplus.txt', delimiter=",",skiprows=0,usecols=[0,1])
 df_c_heapSort=pd.DataFrame(df_c_heapSort)
 
 x_1 = df_python_heapSort.iloc[:,0]
@@ -36,8 +36,8 @@ leg.get_frame().set_alpha(0.5)
 plt.show()
 
 # Lectura de resultados algoritmo heapSort
-df_python_insertionSort = pd.read_csv('E:/2021/UNSA/Semestre I/Algoritmos/Practica/Trabajo en equipo/python/data/insertionSortPython.csv',header=None)
-df_c_insertionSort = np.loadtxt('E:/2021/UNSA/Semestre I/Algoritmos/Practica/Trabajo en equipo/c++/data/insertionSortCplus.txt', delimiter=",",skiprows=0,usecols=[0,1])
+df_python_insertionSort = pd.read_csv('./insertionSortPython.csv',header=None)
+df_c_insertionSort = np.loadtxt('./insertionSortCplus.txt', delimiter=",",skiprows=0,usecols=[0,1])
 df_c_insertionSort=pd.DataFrame(df_c_insertionSort)
 
 x_11 = df_python_insertionSort.iloc[:,0]
