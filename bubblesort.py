@@ -23,9 +23,9 @@ for canti_data in arr2:
 	if canti_data != 100000:
 		str1+= str(canti_data) + ' ' +  str(result) + '\n'
 	else:
-	    str1+= str(result)
+	    str1+= str(canti_data) + ' ' + str(result)
 
-file = open("./ResBubbleSortPython.txt", "w")
+file = open("./ResBubbleSortPython1.txt", "w")
 file. write(str1)    
 file. close()
 
