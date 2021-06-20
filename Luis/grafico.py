@@ -5,8 +5,6 @@ Created on Mon Jun 14 06:20:00 2021
 @author: Luis
 """
 
-
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -20,14 +18,17 @@ y_1=df_python_heapSort.iloc[:,1]
 y_2=df_c_heapSort.iloc[:,1]
 
 # Gráfica algoritmo HeapSort
-plt.title("Algoritmo HeapSort", position=(0.5, 0.9),
+plt.title("Algoritmo Heapsort", position=(0.5, 0.9),
           fontdict={'family': 'helvetica', 
                     'color' : 'black',
                     #'weight': 'none',
                     'size': 14})
 
-plt.plot(x_1, y_1, marker="+",label="Python",linestyle = ":",mec = "g",mew = 1.8,ms = 10)
-plt.plot(x_1, y_2, marker="+",label="C++",linestyle = ":",mec = "orange",mew = 1.8,ms = 10)
+#plt.plot(x_1, y_1, marker="+",label="Python",linestyle = ":",mec = "orange",mew = 1.8,ms = 10)
+#plt.plot(x_1, y_2, marker="+",label="C++",linestyle = ":",mec = "g",mew = 1.8,ms = 10)
+plt.plot(x_1,y_2, color='green', linewidth=2.0, linestyle='-', label='C++')
+plt.plot(x_1,y_1, color='orange', linewidth=2.0, linestyle='-', label='Python')
+
 plt.xlabel('Cantidad de datos')
 plt.ylabel('Tiempo en milisegundos')
 #plt.plot(x_1, y_2, marker="*",label="C++",linestyle = ":")
@@ -46,14 +47,14 @@ y_22=df_c_insertionSort.iloc[:,1]
 
 
 # Gráfica algoritmo HeapSort
-plt.title("Algoritmo Insertion Sort", position=(0.5, 0.9),
+plt.title("Algoritmo Inserción directa", position=(0.5, 0.9),
           fontdict={'family': 'helvetica', 
                     'color' : 'black',
                     #'weight': 'none',
                     'size': 14})
 
-plt.plot(x_11, y_11, marker="+",label="Python",linestyle = ":",mec = "g",mew = 1.8,ms = 10)
-plt.plot(x_11, y_22, marker="+",label="C++",linestyle = ":",mec = "orange",mew = 1.8,ms = 10)
+plt.plot(x_11,y_22, color='green', linewidth=2.0, linestyle='-', label='C++')
+plt.plot(x_11,y_11, color='orange', linewidth=2.0, linestyle='-', label='Python')
 plt.xlabel('Cantidad de datos')
 plt.ylabel('Tiempo en milisegundos')
 #plt.plot(x_1, y_2, marker="*",label="C++",linestyle = ":")

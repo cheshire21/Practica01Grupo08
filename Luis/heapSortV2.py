@@ -3,7 +3,6 @@
 Created on Sun Jun 13 17:42:08 2021
 @author: Luis
 """
-import matplotlib
 import numpy as np
 import time 
 # Versión 1
@@ -26,23 +25,24 @@ import time
 #        heapify(arr, i, 0)
 # Fin version 1
 def inserta_en_monticulo(arr,n):
-    for i in range(2,n):
+    for i in range(1,n):
         k=i
         band=True
-        while((k>1)and(band==True)):
+        while((k>0)and(band==True)):
             band=False
-            aux=arr[(k//2)]
-            arr[(k//2)]=arr[k]
-            arr[k]=aux
-            k=k//2
-            band=True
+            if(arr[k]>arr[(k-1)//2]):
+                aux=arr[((k-1)//2)]
+                arr[((k-1)//2)]=arr[k]
+                arr[k]=aux
+                k=(k-1)//2
+                band=True
 def elimina_monticulo(arr,n):
-    for i in range(n-1,2,-1):
+    for i in range(n-1,0,-1):
         aux=arr[i]
-        arr[i]=arr[1]
-        izq=2
-        der=3
-        k=1
+        arr[i]=arr[0]
+        izq=1
+        der=2
+        k=0
         band=True
         while((izq<i) and (band==True)):
             mayor=arr[izq]
@@ -55,13 +55,15 @@ def elimina_monticulo(arr,n):
                 k=ap
             else:
                 band=False
-            izq=k*2
-            der=k*2+1
+            izq=k*2+1
+            der=k*2+2
         arr[k]=aux
 def heapSort(arr):
     inserta_en_monticulo(arr, len(arr))
     elimina_monticulo(arr, len(arr))
-          
+def imprimir(array):
+    for i in array:
+        print(i)
         
 
 str1 = ''
@@ -79,6 +81,14 @@ for canti_data in arr2:
 file = open("./heapSortPython.csv", "w")
 file. write(str1)    
 file. close()
+
+# Activar confines de probar el funcionamiento del algoritmo, con el arreglo de 100 elementos
+"""print("Luego de ordenar")
+canti_data=100
+arr = np.loadtxt(f"./data/archivo{canti_data}.txt", dtype=int)
+heapSort(arr)
+imprimir(arr)
+"""
 
 
 
