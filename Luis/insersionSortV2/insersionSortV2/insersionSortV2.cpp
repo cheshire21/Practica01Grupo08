@@ -20,7 +20,11 @@ void insercion(int array[], int n) {
 		array[k + 1] = aux;
 	}
 }
-
+void imprimir(int arr[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << endl;
+	}
+}
 
 int main()
 {
@@ -37,7 +41,7 @@ int main()
 		ifstream file("..\\..\\data\\archivo" + to_string(num) + ".txt");
 		if (file.is_open())
 		{
-			for (int i = 0; i < num; ++i)
+			for (int i = 1; i <= num; ++i)
 			{
 				file >> arr[i];
 			}
@@ -51,10 +55,8 @@ int main()
 
 		auto t1 = high_resolution_clock::now();
 
-		/* Getting number of milliseconds as an integer. */
 		auto ms_int = duration_cast<milliseconds>(t1 - t0);
 
-		/* Getting number of milliseconds as a double. */
 		duration<double, std::milli> ms_double = t1 - t0;
 
 		str1 = str1 + to_string(num) + "," + to_string(ms_double.count()) + "\n";
@@ -63,4 +65,19 @@ int main()
 	MyFile << str1 << endl;
 	MyFile.close();
 	return 0;
+	/*Activar solo con fines de probar el funcionamiento del métod Heapsort*/
+	/*int* arr = nullptr;
+	arr = new int[100];
+	ifstream file("..\\..\\data\\archivo" + to_string(100) + ".txt");
+	if (file.is_open())
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			file >> arr[i];
+		}
+		file.close();
+	}
+	insercion(arr, 100);
+	imprimir(arr, 100);
+	return 0;*/
 }
